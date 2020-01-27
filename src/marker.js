@@ -10,12 +10,16 @@ const buildMarker = function(type, coords) {
   if (type === 'activity') {
     const markerDomEl = document.createElement('div');
     markerDomEl.style.backgroundImage = iconURLs.activities;
+
+    const marker = new mapbox.Marker(markerDomEl).setLngLat(coords).addTo(map);
   } else if (type === 'hotel') {
-    const markerDomEl = document.createElement('div');
-    markerDomEl.style.backgroundImage = iconURLs.hotels;
+    const markerDomEl2 = document.createElement('div');
+    markerDomEl2.style.backgroundImage = iconURLs.hotels;
+
+    new mapboxgl.Marker(markerDomEl2).setLngLat(coords).addTo(map);
   } else {
-    const markerDomEl = document.createElement('div');
-    markerDomEl.style.backgroundImage = iconURLs.restaurants;
+    const markerDomEl3 = document.createElement('div');
+    markerDomEl3.style.backgroundImage = iconURLs.restaurants;
   }
 };
 
